@@ -35,26 +35,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: npm ci
-    - run: npm start &
+    - run: npm install
+  
+    - run:  npm start >> abc.txt &
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Apply php-cs-fixer changes
 
-
-  job1:
-    runs-on: ubuntu-latest
-    # Map a step output to a job output
-    outputs:
-      output1: ${{ steps.step1.outputs.test }}
-      output2: ${{ steps.step2.outputs.test }}
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm install
-      - id: step1
-        run:  npm start >> abc.txt &
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Apply php-cs-fixer changes
