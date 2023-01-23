@@ -28,17 +28,21 @@ jobs:
     - name: Run backgroudn step
       id: background-step
       run: echo "im running in background" &
-    
     - name: Get backgroudn step output
       run: echo "${{ steps.background-step.outputs.backgound-output}}"
 
 
-    - name: Get today's date
+
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: npm ci
+    - name: Server on background
       uses: mathiasvr/command-output@v1
       id: today
       with:
-        run: echo "im running in background" &
-
+        run: npm start &
     - name: "Result"
       run: echo Today is ${{ steps.today.outputs.stdout }}
 
