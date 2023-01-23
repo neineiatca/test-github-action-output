@@ -38,13 +38,4 @@ jobs:
       with:
         node-version: 16
     - run: npm ci
-    - name: Server on background
-      uses: mathiasvr/command-output@v1
-      id: today
-      with:
-        run: npm start &
-    - name: "Result"
-      run: echo Today is ${{ steps.today.outputs.stdout }}
-
-
-
+    - run: npm start &
