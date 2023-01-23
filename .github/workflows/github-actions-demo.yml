@@ -19,4 +19,5 @@ jobs:
         printf "Hello\nWorld\n" > hw.txt
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
+        tagging_message: 'v1.0.0'
         commit_message: Apply php-cs-fixer changes
