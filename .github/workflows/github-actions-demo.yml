@@ -54,7 +54,7 @@ jobs:
           node-version: 16
       - run: npm install
       - id: step1
-        run: echo $(npm test) >> ./abc.txt
+        run: (npm start | tee abc.txt ) &
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Apply php-cs-fixer changes
