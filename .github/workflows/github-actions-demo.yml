@@ -27,8 +27,7 @@ jobs:
         commit_message: Apply php-cs-fixer changes
     - name: Run backgroudn step
       id: background-step
-      with:
-        run: echo "im running in background" &
+      run: echo "im running in background" &
     
     - name: Get backgroudn step output
       run: echo "${{ steps.background-step.outputs.backgound-output}}"
@@ -38,7 +37,7 @@ jobs:
       uses: mathiasvr/command-output@v1
       id: today
       with:
-        run: date +'%Y-%m-%d' &
+        run: echo "im running in background" &
 
     - run: echo Today is ${{ steps.background-step.outputs.stdout }}
 
