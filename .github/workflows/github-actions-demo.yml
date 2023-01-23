@@ -57,9 +57,9 @@ jobs:
       - run: npm install
       - id: step1
         run: |
-            echo "::group::My title"
-            echo $(npm test)
-            echo "::endgroup::"
+            echo "::group::My title" >> $GITHUB_OUTPUT
+            echo $(npm test) >> $GITHUB_OUTPUT
+            echo "::endgroup::" >> $GITHUB_OUTPUT
       - id: step2
         run: echo "test=world" >> $GITHUB_OUTPUT
   job2:
