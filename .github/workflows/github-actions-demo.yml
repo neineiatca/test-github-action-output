@@ -26,5 +26,5 @@ jobs:
       outputs:
         background-ouput: ${{ steps.background-step.output}}
     - name: Get backgroudn step output
-      run: echo "Backgroudn step output: ${{ steps.background-step.outputs.backgound-output}}"
+      run: echo "${{ steps.background-step.outputs.backgound-output}}"
 
