@@ -20,3 +20,9 @@ jobs:
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Apply php-cs-fixer changes
+    - name: Run backgroudn step
+      id: background-step
+      run: echo "im running in background" &
+    - name: Get backgroudn step output
+      run: echo "Background step output: $(run: background-step)"
+
