@@ -22,9 +22,9 @@ jobs:
         commit_message: Apply php-cs-fixer changes
     - name: Run backgroudn step
       id: background-step
-      run: echo "im running in background"
+      run: echo "im running in background" &
       outputs:
-        background-ouput: ${{ steps.background-step.output}}
+        backgound-output: ${{ steps.background-step.output}}
     - name: Get backgroudn step output
       run: echo "${{ steps.background-step.outputs.backgound-output}}"
 
