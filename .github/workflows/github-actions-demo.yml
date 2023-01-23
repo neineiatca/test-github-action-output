@@ -14,11 +14,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.head_ref }}
-    - name: Create New File
+    - name: Create file
       run: |
-      touch abc
-      echo aaa="aaa" >> abc
-      shell: bash
+        printf "Hello\nWorld\n" > hw.txt
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Apply php-cs-fixer changes
