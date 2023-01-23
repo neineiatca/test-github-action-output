@@ -39,7 +39,7 @@ jobs:
       with:
         run: echo "im running in background" &
 
-    - run: echo Today is ${{ steps.background-step.outputs.stdout }}
+    - run: echo Today is ${{ steps.today.outputs.stdout }}
 
 
 
