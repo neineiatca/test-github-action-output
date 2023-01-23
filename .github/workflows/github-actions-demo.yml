@@ -48,6 +48,9 @@ jobs:
       output1: ${{ steps.step1.outputs.test }}
       output2: ${{ steps.step2.outputs.test }}
     steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v3
         with:
           node-version: 16
