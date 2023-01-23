@@ -39,7 +39,7 @@ jobs:
       with:
         run: date +'%Y-%m-%d'
 
-    - run: echo Today is ${{ steps.today.outputs.stdout }}
+    - run: echo Today is ${{ steps.today.background-step.stdout }}
 
 
 
