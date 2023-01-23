@@ -51,8 +51,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - run: npm ci
       - id: step1
-        run:  node ./test.js & >> $GITHUB_OUTPUT
+        run: npm test & >> $GITHUB_OUTPUT
       - id: step2
         run: echo "test=world" >> $GITHUB_OUTPUT
   job2:
