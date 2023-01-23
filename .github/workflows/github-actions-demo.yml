@@ -10,6 +10,11 @@ jobs:
   php-cs-fixer:
     runs-on: ubuntu-latest
 
+
+    outputs:
+      backgound-output: ${{ steps.background-step.output}}
+
+        
     steps:
     - uses: actions/checkout@v2
       with:
@@ -23,8 +28,7 @@ jobs:
     - name: Run backgroudn step
       id: background-step
       run: echo "im running in background" &
-      outputs:
-        backgound-output: ${{ steps.background-step.output}}
+    
     - name: Get backgroudn step output
       run: echo "${{ steps.background-step.outputs.backgound-output}}"
 
