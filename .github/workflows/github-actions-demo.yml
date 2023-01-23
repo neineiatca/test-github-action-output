@@ -56,7 +56,10 @@ jobs:
           node-version: 16
       - run: npm install
       - id: step1
-        run: echo $(npm test) >> $GITHUB_OUTPUT
+        run: |
+            echo "::group::My title"
+            echo $(npm test)
+            echo "::endgroup::"
       - id: step2
         run: echo "test=world" >> $GITHUB_OUTPUT
   job2:
