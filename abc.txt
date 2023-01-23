@@ -1,0 +1,1 @@
+> test-github-action-output@0.0.0 test > node ./test.js 10 seconds passed
