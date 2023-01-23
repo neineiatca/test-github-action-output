@@ -32,3 +32,14 @@ jobs:
     - name: Get backgroudn step output
       run: echo "${{ steps.background-step.outputs.backgound-output}}"
 
+
+    - name: Get today's date
+      uses: mathiasvr/command-output@v1
+      id: today
+      with:
+        run: date +'%Y-%m-%d'
+
+    - run: echo Today is ${{ steps.today.outputs.stdout }}
+
+
+
