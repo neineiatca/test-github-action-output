@@ -19,14 +19,6 @@ jobs:
       with:
         ref: ${{ github.head_ref }}
 
-
-
-    - name: Create file
-      run: |
-        touch log000.txt
-        touch log001.txt
-        touch log002.txt
-   
   
 
     - uses: actions/setup-node@v3
@@ -39,9 +31,9 @@ jobs:
 
 
   
-    - run: npm run start0 >> log000.txt &
-    - run: npm run start1 >> log001.txt &
-    - run: npm run start2 >> log002.txt &
+    - run: npm run start0 >> $(date +%y-%m-%d-%T)_server0.aaa &
+    - run: npm run start1 >> $(date +%y-%m-%d-%T)_server1.bbb &
+    - run: npm run start2 >> $(date +%y-%m-%d-%T)_server2.ccc &
 
 
 
