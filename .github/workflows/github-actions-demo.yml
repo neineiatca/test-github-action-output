@@ -33,7 +33,7 @@ jobs:
   
     - run: npm run start0 >> logs/$(date +%y-%m-%d-%T)_server0.aaa &
     - run: npm run start1 >> logs/$(date +%y-%m-%d-%T)_server1.bbb &
-    - run: npm run start2 >> logs/$(date +%y-%m-%d-%T)_server2.ccc &
+    - run: npm run start2 >> ./logs/$(date +%y-%m-%d-%T)_server2.ccc &
 
 
 
