@@ -31,9 +31,9 @@ jobs:
 
 
   
-    - run: npm run start0 >> $(date +%y-%m-%d-%T)_server0.aaa &
-    - run: npm run start1 >> $(date +%y-%m-%d-%T)_server1.bbb &
-    - run: npm run start2 >> $(date +%y-%m-%d-%T)_server2.ccc &
+    - run: npm run start0 >> ./logs/$(date +%y-%m-%d-%T)_server0.aaa &
+    - run: npm run start1 >> ./logs/$(date +%y-%m-%d-%T)_server1.bbb &
+    - run: npm run start2 >> ./logs/$(date +%y-%m-%d-%T)_server2.ccc &
 
 
 
@@ -46,5 +46,5 @@ jobs:
 
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Apply php-cs-fixer changes
+        commit_message: logs for 3 servers
 
